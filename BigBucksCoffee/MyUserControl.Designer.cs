@@ -46,12 +46,13 @@ namespace UserControls
             // 
             this.pbProduct.Image = ((System.Drawing.Image)(resources.GetObject("pbProduct.Image")));
             this.pbProduct.Location = new System.Drawing.Point(19, 21);
-            this.pbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.pbProduct.Name = "pbProduct";
             this.pbProduct.Size = new System.Drawing.Size(319, 320);
             this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProduct.TabIndex = 0;
             this.pbProduct.TabStop = false;
+            this.pbProduct.MouseHover += new System.EventHandler(this.pbProduct_MouseHover);
             // 
             // lblProductName
             // 
@@ -77,7 +78,7 @@ namespace UserControls
             // btnAddToCart
             // 
             this.btnAddToCart.Location = new System.Drawing.Point(19, 656);
-            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(158, 56);
             this.btnAddToCart.TabIndex = 4;
@@ -88,7 +89,7 @@ namespace UserControls
             // numAmount
             // 
             this.numAmount.Location = new System.Drawing.Point(96, 604);
-            this.numAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numAmount.Margin = new System.Windows.Forms.Padding(4);
             this.numAmount.Maximum = new decimal(new int[] {
             5,
             0,
@@ -102,7 +103,7 @@ namespace UserControls
             // 
             this.cbIsInStock.AutoSize = true;
             this.cbIsInStock.Location = new System.Drawing.Point(19, 404);
-            this.cbIsInStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbIsInStock.Margin = new System.Windows.Forms.Padding(4);
             this.cbIsInStock.Name = "cbIsInStock";
             this.cbIsInStock.Size = new System.Drawing.Size(129, 29);
             this.cbIsInStock.TabIndex = 6;
@@ -111,12 +112,15 @@ namespace UserControls
             // 
             // lblDescription
             // 
+            this.lblDescription.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDescription.Location = new System.Drawing.Point(19, 456);
+            this.lblDescription.Location = new System.Drawing.Point(20, 21);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(318, 130);
+            this.lblDescription.Size = new System.Drawing.Size(318, 320);
             this.lblDescription.TabIndex = 7;
+            this.lblDescription.Visible = false;
+            this.lblDescription.MouseLeave += new System.EventHandler(this.lblDescription_MouseLeave);
             // 
             // lblTotal
             // 
@@ -140,7 +144,7 @@ namespace UserControls
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.pbProduct);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyUserControl";
             this.Size = new System.Drawing.Size(359, 759);
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).EndInit();

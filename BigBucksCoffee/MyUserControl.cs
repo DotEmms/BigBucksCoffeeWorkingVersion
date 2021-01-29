@@ -80,5 +80,20 @@ namespace UserControls
             lblTotal.Text = (count).ToString();
         }
 
+        private void pbProduct_MouseHover(object sender, EventArgs e)
+        {
+            lblDescription.Visible = true;
+            lblDescription.Text = Description;
+        }
+
+        private void lblDescription_MouseLeave(object sender, EventArgs e)
+        {
+            lblDescription.Visible = false;
+        }
+
+        private void lblDescription_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
