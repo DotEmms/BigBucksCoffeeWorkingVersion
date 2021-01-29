@@ -13,7 +13,6 @@ namespace UserControls
     {
         public ShoppingCart _cart;
         private IBeverageRepo _repo;
-        //double tempPrice;
 
         public MyUserControl()
         {
@@ -69,15 +68,55 @@ namespace UserControls
                 }
             }
         }
-        int count = 0;
+
+        private int _count;
+
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                if (Count > 5)
+                {
+                    for (int i = 0; i < value; i++)
+                    {
+                        var drink = _repo.GetDrink(DrinkID);
+                        _cart.AddDrinkToCart(drink);
+                    }
+
+                    _count += value;
+                }
+                else
+                {
+                    MessageBox.Show("Maximum Limit of items!");
+                    btnAddToCart.Enabled = false;
+                }
+            }
+        }
+
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            var drink = _repo.GetDrink(DrinkID);
-            _cart.AddDrinkToCart(drink);
-            // lblTotal.Text =  Convert.ToString(_cart.CalculatePrice(drink));
-            count++;
+            //var drink = _repo.GetDrink(DrinkID);
+            //_cart.AddDrinkToCart(drink);
+            //if (Count<5)
+            //{
+            Count = Convert.ToInt32(Amount);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Maximum Limit of items!");
+            //    btnAddToCart.Enabled = false;
+            //}
 
-            lblTotal.Text = (count).ToString();
+            //if (Count < 5)
+            //{
+                //for (int i = 0; i < Amount; i++)
+                //{
+                //    var drink = _repo.GetDrink(DrinkID);
+                //    _cart.AddDrinkToCart(drink);
+                //}
+            //}
+            lblTotal.Text = (Count).ToString();
         }
 
         private void pbProduct_MouseHover(object sender, EventArgs e)
@@ -95,5 +134,24 @@ namespace UserControls
         {
 
         }
+
+        private void numAmount_ValueChanged(object sender, EventArgs e)
+        {
+            btnAddToCart.Enabled = true;
+        }
+
+
+        private void NumericAddToCart()
+        {
+            if (Count <5)
+            {
+                for (int i = 0; i < Amount; i++)
+                {
+                    var drink = _repo.GetDrink(DrinkID);
+                    _cart.AddDrinkToCart(drink);
+                }
+            }
+        }
     }
+
 }

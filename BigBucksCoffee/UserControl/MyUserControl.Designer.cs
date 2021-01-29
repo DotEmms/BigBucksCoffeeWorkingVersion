@@ -77,7 +77,8 @@ namespace UserControls
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Location = new System.Drawing.Point(19, 656);
+            this.btnAddToCart.Enabled = false;
+            this.btnAddToCart.Location = new System.Drawing.Point(19, 523);
             this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(158, 56);
@@ -88,7 +89,7 @@ namespace UserControls
             // 
             // numAmount
             // 
-            this.numAmount.Location = new System.Drawing.Point(96, 604);
+            this.numAmount.Location = new System.Drawing.Point(94, 466);
             this.numAmount.Margin = new System.Windows.Forms.Padding(4);
             this.numAmount.Maximum = new decimal(new int[] {
             5,
@@ -98,6 +99,7 @@ namespace UserControls
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(158, 29);
             this.numAmount.TabIndex = 5;
+            this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
             // 
             // cbIsInStock
             // 
@@ -125,7 +127,7 @@ namespace UserControls
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(208, 672);
+            this.lblTotal.Location = new System.Drawing.Point(208, 539);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(62, 25);
@@ -146,7 +148,7 @@ namespace UserControls
             this.Controls.Add(this.pbProduct);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyUserControl";
-            this.Size = new System.Drawing.Size(359, 759);
+            this.Size = new System.Drawing.Size(359, 598);
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
             this.ResumeLayout(false);
