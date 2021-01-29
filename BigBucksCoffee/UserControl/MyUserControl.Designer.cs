@@ -48,7 +48,7 @@ namespace UserControls
             this.pbProduct.Location = new System.Drawing.Point(19, 21);
             this.pbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.pbProduct.Name = "pbProduct";
-            this.pbProduct.Size = new System.Drawing.Size(319, 320);
+            this.pbProduct.Size = new System.Drawing.Size(229, 230);
             this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProduct.TabIndex = 0;
             this.pbProduct.TabStop = false;
@@ -58,20 +58,18 @@ namespace UserControls
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(89, 352);
-            this.lblProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProductName.Location = new System.Drawing.Point(66, 242);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(181, 30);
+            this.lblProductName.Size = new System.Drawing.Size(137, 24);
             this.lblProductName.TabIndex = 1;
             this.lblProductName.Text = "ProductName";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(245, 404);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrice.Location = new System.Drawing.Point(178, 269);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(56, 25);
+            this.lblPrice.Size = new System.Drawing.Size(40, 17);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "Price";
             // 
@@ -81,7 +79,7 @@ namespace UserControls
             this.btnAddToCart.Location = new System.Drawing.Point(19, 523);
             this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new System.Drawing.Size(158, 56);
+            this.btnAddToCart.Size = new System.Drawing.Size(115, 37);
             this.btnAddToCart.TabIndex = 4;
             this.btnAddToCart.Text = "Add to cart";
             this.btnAddToCart.UseVisualStyleBackColor = true;
@@ -97,7 +95,7 @@ namespace UserControls
             0,
             0});
             this.numAmount.Name = "numAmount";
-            this.numAmount.Size = new System.Drawing.Size(158, 29);
+            this.numAmount.Size = new System.Drawing.Size(115, 22);
             this.numAmount.TabIndex = 5;
             this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
             // 
@@ -107,7 +105,7 @@ namespace UserControls
             this.cbIsInStock.Location = new System.Drawing.Point(19, 404);
             this.cbIsInStock.Margin = new System.Windows.Forms.Padding(4);
             this.cbIsInStock.Name = "cbIsInStock";
-            this.cbIsInStock.Size = new System.Drawing.Size(129, 29);
+            this.cbIsInStock.Size = new System.Drawing.Size(94, 21);
             this.cbIsInStock.TabIndex = 6;
             this.cbIsInStock.Text = "Is In Stock";
             this.cbIsInStock.UseVisualStyleBackColor = true;
@@ -130,13 +128,13 @@ namespace UserControls
             this.lblTotal.Location = new System.Drawing.Point(208, 539);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(62, 25);
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
             this.lblTotal.TabIndex = 8;
             this.lblTotal.Text = "Total:";
             // 
             // MyUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblDescription);
