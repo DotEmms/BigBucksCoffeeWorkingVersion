@@ -46,54 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Beverage.cs" />
-    <Compile Include="DynamicControls.cs">
+    <Compile Include="Beverages\Beverage.cs" />
+    <Compile Include="Form\DynamicControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DynamicControls.Designer.cs">
+    <Compile Include="Form\DynamicControls.Designer.cs">
       <DependentUpon>DynamicControls.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormShoppingCart.cs">
+    <Compile Include="Form\FormShoppingCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormShoppingCart.Designer.cs">
+    <Compile Include="Form\FormShoppingCart.Designer.cs">
       <DependentUpon>FormShoppingCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="IBeverage.cs" />
-    <Compile Include="Coffee.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Interfaces\IBeverage.cs" />
+    <Compile Include="Beverages\Coffee.cs" />
+    <Compile Include="Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IBeverageRepo.cs" />
-    <Compile Include="IPriceCalculator.cs" />
-    <Compile Include="IShoppingCart.cs" />
-    <Compile Include="MyUserControl.cs">
+    <Compile Include="Interfaces\IBeverageRepo.cs" />
+    <Compile Include="Interfaces\IPriceCalculator.cs" />
+    <Compile Include="Interfaces\IShoppingCart.cs" />
+    <Compile Include="UserControl\MyUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControl.Designer.cs">
+    <Compile Include="UserControl\MyUserControl.Designer.cs">
       <DependentUpon>MyUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PriceCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.cs" />
-    <Compile Include="Smoothie.cs" />
-    <Compile Include="Soda.cs" />
-    <Compile Include="Tea.cs" />
+    <Compile Include="Beverages\Smoothie.cs" />
+    <Compile Include="Beverages\Soda.cs" />
+    <Compile Include="Beverages\Tea.cs" />
     <Compile Include="BeverageRepo.cs" />
-    <EmbeddedResource Include="DynamicControls.resx">
+    <EmbeddedResource Include="Form\DynamicControls.resx">
       <DependentUpon>DynamicControls.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormShoppingCart.resx">
+    <EmbeddedResource Include="Form\FormShoppingCart.resx">
       <DependentUpon>FormShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControl.resx">
+    <EmbeddedResource Include="UserControl\MyUserControl.resx">
       <DependentUpon>MyUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,9 +123,12 @@
     <Content Include="Images\blackCoffee.jpg" />
     <Content Include="Images\blackTea.jpg" />
     <Content Include="Images\coffee2.jpg" />
+    <Content Include="Images\cola.jpg" />
+    <Content Include="Images\fanta.jpg" />
     <Content Include="Images\greenTea.jpg" />
     <Content Include="Images\greenTea.png" />
     <Content Include="Images\greenTea2.jpg" />
+    <Content Include="Images\strawberrySmoothie.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
