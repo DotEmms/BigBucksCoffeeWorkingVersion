@@ -22,8 +22,8 @@ namespace BigBucksCoffee
             InitializeComponent();
             beverageRepo = new BeverageRepo();
             priceCalculator = new PriceCalculator();
-            myCart = myUserControl._cart;
-            var drinks = myCart._beverages;
+            myCart = ShoppingCart.GetCart();
+            var drinks = myCart.GetDrinksInCart();
             ShowShoppingCartItems(drinks);
             ShowTotalExclBTW(drinks);
             ShowBTW(drinks);
@@ -51,7 +51,7 @@ namespace BigBucksCoffee
 
         public void ShowTotalInclBTW(IEnumerable<IBeverage> beverages)
         {
-            ShoppingCart shoppingCart = new ShoppingCart();
+            ShoppingCart shoppingCart = ShoppingCart.GetCart();
             lblTotal.Text = shoppingCart.CalculatePrice(beverages).ToString();
 
         }

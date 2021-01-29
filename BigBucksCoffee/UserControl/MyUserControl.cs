@@ -1,26 +1,23 @@
-﻿using BigBucksCoffee;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
-
 
 namespace UserControls
 {
     public partial class MyUserControl : UserControl
     {
-        public ShoppingCart _cart;
-        private IBeverageRepo _repo;
-
         public MyUserControl()
         {
             InitializeComponent();
-            _cart = ShoppingCart.GetShoppingCart();
-            _repo = new BeverageRepo();
         }
-       
+
+        public event EventHandler ButtonAddToCartClicked;
+
+        protected virtual void OnButtonAddToCartClicked(EventArgs e)
+        {
+            ButtonAddToCartClicked?.Invoke(this, e);
+        }
+
+        public int MaxCount { get; set; } = 5;
 
         public int DrinkID { get; set; }
 
@@ -76,14 +73,8 @@ namespace UserControls
             get { return _count; }
             set
             {
-                if (Count > 5)
+                if ((Count + value) <= MaxCount)
                 {
-                    for (int i = 0; i < value; i++)
-                    {
-                        var drink = _repo.GetDrink(DrinkID);
-                        _cart.AddDrinkToCart(drink);
-                    }
-
                     _count += value;
                 }
                 else
@@ -96,27 +87,9 @@ namespace UserControls
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            //var drink = _repo.GetDrink(DrinkID);
-            //_cart.AddDrinkToCart(drink);
-            //if (Count<5)
-            //{
             Count = Convert.ToInt32(Amount);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Maximum Limit of items!");
-            //    btnAddToCart.Enabled = false;
-            //}
-
-            //if (Count < 5)
-            //{
-                //for (int i = 0; i < Amount; i++)
-                //{
-                //    var drink = _repo.GetDrink(DrinkID);
-                //    _cart.AddDrinkToCart(drink);
-                //}
-            //}
             lblTotal.Text = (Count).ToString();
+            OnButtonAddToCartClicked(e);
         }
 
         private void pbProduct_MouseHover(object sender, EventArgs e)
@@ -132,26 +105,11 @@ namespace UserControls
 
         private void lblDescription_Click(object sender, EventArgs e)
         {
-
         }
 
         private void numAmount_ValueChanged(object sender, EventArgs e)
         {
             btnAddToCart.Enabled = true;
         }
-
-
-        private void NumericAddToCart()
-        {
-            if (Count <5)
-            {
-                for (int i = 0; i < Amount; i++)
-                {
-                    var drink = _repo.GetDrink(DrinkID);
-                    _cart.AddDrinkToCart(drink);
-                }
-            }
-        }
     }
-
 }

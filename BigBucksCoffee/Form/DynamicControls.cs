@@ -16,6 +16,7 @@ namespace BigBucksCoffee
         BeverageRepo beverageRepo;
         FormShoppingCart _formShoppingCart;
         List<IBeverage> drinks;
+        IShoppingCart shoppingCart;
 
         public DynamicControls()
         {
@@ -24,6 +25,8 @@ namespace BigBucksCoffee
             drinks = beverageRepo.GetBeverages();
             GenerateControlsForDrinks(drinks);
             _formShoppingCart = new FormShoppingCart();
+            shoppingCart = ShoppingCart.GetCart();
+
         }
         private void GenerateControlsForDrinks(IEnumerable<IBeverage> drinks)
         {
@@ -36,10 +39,23 @@ namespace BigBucksCoffee
                     Price = drink.Price.ToString(),
                     //IsInStock = drink.IsInStock,
                     Description = drink.Description,
-                    Image = drink.Image
+                    Image = drink.Image,
                 };
 
+                myUserControl.ButtonAddToCartClicked += OnButtonAddToCartClicked;
+
                 flowLayoutPanel1.Controls.Add(myUserControl);
+            }
+        }
+
+        private void OnButtonAddToCartClicked(object sender, EventArgs e)
+        {
+            MyUserControl myUserControl = sender as MyUserControl;
+            IBeverage drink = beverageRepo.GetDrink(myUserControl.DrinkID);
+
+            for (int i = 0; i < myUserControl.Amount; i++)
+            {
+                shoppingCart.AddDrinkToCart(drink);
             }
         }
 

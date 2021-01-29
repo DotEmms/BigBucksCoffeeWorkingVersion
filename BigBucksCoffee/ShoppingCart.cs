@@ -9,12 +9,20 @@ namespace BigBucksCoffee
     public class ShoppingCart : IShoppingCart
     {
         //We have to change it later
-        public List<IBeverage> _beverages;
-        private static ShoppingCart _cart;
-
-        public ShoppingCart()
+        private List<IBeverage> _beverages;
+        private static ShoppingCart _shoppingCart;
+        private ShoppingCart()
         {
             _beverages = new List<IBeverage>();
+
+        }
+        public static ShoppingCart GetCart()
+        {
+            if (_shoppingCart ==null)
+            {
+                _shoppingCart = new ShoppingCart();
+            }
+            return _shoppingCart;
         }
 
         public void AddDrinkToCart(IBeverage beverage)
@@ -22,15 +30,12 @@ namespace BigBucksCoffee
             _beverages.Add(beverage);
         }
 
-        public static ShoppingCart GetShoppingCart()
+        public IEnumerable<IBeverage> GetDrinksInCart()
         {
-            if (_cart == null)
-            {
-                _cart = new ShoppingCart();
-            }
+            return _beverages;
+        }  
+      
 
-            return _cart;
-        }
         public double CalculatePrice(IEnumerable<IBeverage> beverages)
         {
             double total = 0;
